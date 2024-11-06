@@ -3,7 +3,7 @@
 </p>
 
 <h1>Creating Users with Powershell, Configuring Group Policy, and Managing Accounts Within Active Directroy in Azure.</h1>
-This tutorial will focus on allowing non-administrive users to connect via Remote Desktop Connection to the Client VM, create a bulk of users in Powershell,   .<br />
+This tutorial will focus on further configuring Active Directory to simulate a real world environment by creating a bulk of users, editing group policies, managing accounts, and observing logs within Event Viewer.<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -17,69 +17,59 @@ This tutorial will focus on allowing non-administrive users to connect via Remot
 - Windows Server
 - Windows 10 Pro
 
-<h2>Deployment and Configuration Steps</h2>
+<h2>Active Directory Configuration</h2>
 
 <p>
-<img src="https://i.imgur.com/nyZ7iqM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/X0ohokt.png" height="80%" width="80%" alt="Allow Remote Desktop"/>
 <br />
 <br />
-<img src="https://i.imgur.com/soiZlyn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ELeyi42.png" height="80%" width="80%" alt="Save create-users File"/>
 <br />
 <br />
-<img src="https://i.imgur.com/98Z0v7E.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/XGrZspm.png" height="80%" width="80%" alt="Run User Creation Script and Observe"/>
 <br />
 <br />
-<img src="https://i.imgur.com/7p6VuhK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/5hkjG5S.png" height="80%" width="80%" alt="Login as Newly Created User and Observe C: Drive"/>
 <br />
 <br />
-<img src="https://i.imgur.com/U8CXBuw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/FA49WVm.png" height="80%" width="80%" alt="Open Group Policy Management"/>
 <br />
 <br />
-<img src="https://i.imgur.com/Vccv5qF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/NVt7ofm.png" height="80%" width="80%" alt="Edit Domain Policy"/>
 <br />
 <br />
-<img src="https://i.imgur.com/1LuNJdn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Axzf8xN.png" height="80%" width="80%" alt="Edit Account Lockout Policy"/>
 <br />
 <br />
-<img src="https://i.imgur.com/OUIlCO7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/T2A3jqb.png" height="80%" width="80%" alt="Add Lockout Threshold"/>
 <br />
 <br />
-<img src="https://i.imgur.com/1wTowJT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/MM3GNgz.png" height="80%" width="80%" alt="Force Policy Update"/>
 <br />
 <br />
-<img src="https://i.imgur.com/e5mYLMz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/BYRWJAQ.png" height="80%" width="80%" alt="Force Account Lockout"/>
 <br />
 <br />
-<img src="https://i.imgur.com/9NAXbUG.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/M57JTAW.png" height="80%" width="80%" alt="Unlock User Account"/>
 <br />
 <br />
-<img src="https://i.imgur.com/TOZBXBn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CsFNULI.png" height="80%" width="80%" alt="Disable User Account"/>
 <br />
 <br />
-<img src="https://i.imgur.com/Z8JtISN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CTbGrdi.png" height="80%" width="80%" alt="Disable User Account Confirmation"/>
 <br />
 <br />
-<img src="https://i.imgur.com/aVbwbkw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/pIeP4W2.png" height="80%" width="80%" alt="Observe Login Attempt By Disabled Account"/>
 <br />
 <br />
-<img src="https://i.imgur.com/vU6vw5I.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/us5uBSs.png" height="80%" width="80%" alt="Enable User Account"/>
 <br />
 <br />
-  <img src="https://i.imgur.com/mHB5J7W.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/Achx46i.png" height="80%" width="80%" alt="Observe Security Events as Non-admin"/>
 <br />
 <br />
-<img src="https://i.imgur.com/G1sQ2BL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/8O14XAM.png" height="80%" width="80%" alt="Login to Event Viewer as Admin"/>
 <br />
 <br />
-<img src="https://i.imgur.com/v2h1ECY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<img src="https://i.imgur.com/Z4Gr3hJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<img src="https://i.imgur.com/mYz1i3y.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<img src="https://i.imgur.com/NMPMfJt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
+<img src="https://i.imgur.com/zmRxb92.png" height="80%" width="80%" alt="Observe Failed Login Attempts"/>
 <br />
