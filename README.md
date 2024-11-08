@@ -20,12 +20,15 @@ This tutorial will focus on further configuring Active Directory to simulate a r
 <h2>Active Directory Configuration</h2>
 
 <p>
+Remote Desktop into the Client VM as our janeadmin account. Right-click Start -> System then under 'Related settings' click Remote Desktop. Now click 'Select users that can remotely access this PC' -> Add -> Type 'Domain Users' -> Check Names -> OK -> OK. <br/>
 <img src="https://i.imgur.com/X0ohokt.png" height="80%" width="80%" alt="Allow Remote Desktop"/>
 <br />
 <br />
+Remote Desktop into the DC VM as our janeadmin account. Now, use Windows search to find and open PowerShell ISE as administrator. Start a new script then use CTRL+S to save the file as 'create-users'. <br/>
 <img src="https://i.imgur.com/ELeyi42.png" height="80%" width="80%" alt="Save create-users File"/>
 <br />
 <br />
+We will now use this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to automate user creation. <br/>
 <img src="https://i.imgur.com/XGrZspm.png" height="80%" width="80%" alt="Run User Creation Script and Observe"/>
 <br />
 <br />
